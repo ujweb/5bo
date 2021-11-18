@@ -1,0 +1,43 @@
+$colors: () !default;
+$colors: map-merge((
+	"primary": ($primary),
+	"primary-variant": ($primary-variant),
+	"white": ($white),
+	"gray-100": ($gray-100),
+	"gray-200": ($gray-200),
+	"gray-300": ($gray-300),
+	"gray-400": ($gray-400),
+	"gray-500": ($gray-500),
+	"black": ($black)
+), $colors);
+
+$typos: $h1, $h2, $h3, $h4, $h5, $h6;
+$typos-m: $h1-m, $h2-m, $h3-m, $h4-m, $h5-m, $h6-m;
+
+%typo-init {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+%typo-weight {
+	font-weight: 600;
+	@media screen and (min-width: 1024px) {
+		font-weight: 500;
+	}
+}
+
+@for $i from 1 through length($typos) {
+	h#{$i}, .h#{$i} {
+		@extend %typo-init;
+		font-size: #{nth($typos-m, $i)};
+		@media screen and (min-width: 1024px) {
+			font-size: #{nth($typos, $i)};
+		}
+	}
+	h#{$i} {
+		@extend %typo-weight;
+	}
+}
+
+b, strong {
+	@extend %typo-weight;
+}
