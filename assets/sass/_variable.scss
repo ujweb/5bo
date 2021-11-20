@@ -20,20 +20,21 @@ $h6-m: $init*16;    //16px
 
 //
 $white:         #fff !default; //background
-$gray-100:      #F8F8F8 !default;
+$gray-100:      #EEEEEE !default;
 $gray-200:      #D9D9D9 !default;
-$gray-300:      #929292 !default;
+$gray-300:      #7F7F7F !default;
 $gray-400:      #393939 !default;
 $gray-500:      #2C2C2C !default;
 $black:         #000 !default;
 
 //
-$blue-dark:     #2D89C8;
-$blue-default:  #28B5C5;
+$blue-lighten:  #597FA8;
+$blue-default:  #19304F;
+$red-default:   #B70000;
 
 //
 $primary: $blue-default !default;
-$primary-variant: $blue-dark !default;
+$primary-variant: $blue-lighten !default;
 
 //
 $facebook:      #1877f2 !default;

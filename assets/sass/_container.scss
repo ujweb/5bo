@@ -1,18 +1,26 @@
-.container {
+[class*='container'] {
 	position: relative;
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: $gutter-width / 2;
 	padding-right: $gutter-width / 2;
-	@media screen and (min-width: 1024px) {
-		max-width: 920px;
-	}
-	@media screen and (min-width: 1200px) {
+}
+.container {
+	@media screen and (min-width: 1270px) {
 		max-width: 1200px;
+		&-md {
+			max-width: 1200px;
+		}
 	}
-	@media screen and (min-width: 1366px) {
-		max-width: 1300px;
+	@media screen and (min-width: 1430px) {
+		max-width: 1390px;
+	}
+	@media screen and (min-width: 1590px) {
+		max-width: 1550px;
+	}
+	@media screen and (min-width: 1860px) {
+		max-width: 1750px;
 	}
 }
 
@@ -27,9 +35,6 @@
 .row {
 	display: flex;
 	flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
 	margin-left: -($gutter-width / 2);
 	margin-right: -($gutter-width / 2);
 }

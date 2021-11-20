@@ -19,3 +19,8 @@ $(function () {
 	$(window).on('resize', function () {});
 	$(window).on('scroll', function () {});
 });
+
+$('.hamurger').click(function(){
+	$(this).toggleClass('active');
+	$('.nav-group').slideToggle();
+})

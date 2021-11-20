@@ -1,11 +1,127 @@
 @import "_mixin";
 @import "_variable";
 @import "_common";
+
+@mixin fs24 {
+    font-size: $init * 18;
+    @media screen and (min-width: 1024px) {
+        font-size: $init * 24;
+    }
+}
+@mixin fs28 {
+    font-size: $init * 22;
+    @media screen and (min-width: 1024px) {
+        font-size: $init * 28;
+    }
+}
+
+.align-items-center {
+    align-items: center
+}
+.justify-space-between {
+    justify-content: space-between
+}
+.justify-content-center {
+    justify-content: center
+}
+
 @import "_container";
 @import "_typography";
+@import "_colors";
 @import "_font";
 @import "_button";
 @import "_embed";
-@import "_header";
 @import "_navigation";
 @import "_footer";
+@import "_breadcrumb";
+@import "_jumbotron";
+
+.fs-24 {
+    @include fs24();
+}
+.fs-28 {
+    @include fs28();
+}
+
+.color-primary {
+    a.btn-link {
+        color: $primary;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+main {
+    position: relative;
+    > .main-bg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        &::before {
+            @include beforeafter('', block);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            @include background-image(linear-gradient(top, rgba($white,1) 0%,rgba($white,0) 100%));
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+    h2 {
+        line-height: 1;
+        @include fs28();
+        span.bg-red {
+            width: 100px;
+            height: 5px;
+        }
+    }
+}
+
+table {
+    tr {
+        + tr {
+            border-top: 1px solid $primary;
+        }
+    }
+    th {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        @include fs28();
+        @media screen and (min-width: 1024px) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+    td {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        @include fs24();
+        @media screen and (min-width: 1024px) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        &:nth-child(1) {
+            @include fs28();
+            text-align: center;
+            @media screen and (min-width: 1024px) {
+                width: 280px;
+            }
+        }
+    }
+    ol {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 1.5em;
+    }
+}

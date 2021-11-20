@@ -1,0 +1,84 @@
+.jumbotron {
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	&::before {
+		@include beforeafter('', block);
+	}
+	&.jumbotron--index {
+		background-image: url('../images/jumbotron.jpg');
+		&::before {
+			@media screen and (min-width: 1024px) {
+				padding-top: 30.848329048843188%;
+			}
+		}
+		.container {
+			@media screen and (min-width: 1024px) {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			h1 {
+				span {
+					&.eng {
+						font-size: $init * 48;
+						font-weight: bold;
+						line-height: 1;
+						@media screen and (min-width: 1024px) {
+							font-size: $init * 64;
+						}
+					}
+					&.tc {
+						font-size: $init * 28;
+						font-weight: 300;
+						letter-spacing: 0.6em;
+						@media screen and (min-width: 1024px) {
+							font-size: $init * 35;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.jumbotron--inner {
+		overflow: hidden;
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+			@include background-image(linear-gradient(left, rgba($primary,0.6) 0%, rgba($primary,0) 50%, rgba($primary,0.6) 100%));
+		}
+		> img {
+			position: absolute;
+			display: block;
+			top: 0;
+			bottom: 0;
+			right: -50%;
+			height: 100%;
+			z-index: 0;
+			@media screen and (min-width: 1024px) {
+				right: 0;
+			}
+		}
+		[class*='container'] {
+			z-index: 1;
+			h1 {
+				font-size: $init * 28;
+				font-weight: normal;
+				line-height: 1;
+				text-shadow: 1px 1px 5px rgba($primary, 0.3);
+				@media screen and (min-width: 1024px) {
+					font-size: $init * 35;
+				}
+			}
+		}
+	}
+	&.jumbotron--about {
+		background-image: url('../images/jumbotron-inner.jpg');
+	}
+}

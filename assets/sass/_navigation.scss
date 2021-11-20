@@ -1,0 +1,294 @@
+nav {
+	.container-fluid {
+		&:nth-child(1) {
+			padding-top: 12.5px;
+			padding-bottom: 12.5px;
+			@media screen and (max-width: 767px) {
+				display: none;
+			}
+		}
+		&:nth-child(2) {
+			padding-top: 15px;
+			padding-bottom: 15px;
+			@media screen and (min-width: 768px) {
+				border-top: 1px solid $gray-100;
+			}
+			@media screen and (min-width: 1024px) {
+				padding-top: 25px;
+				padding-bottom: 25px;
+			}
+		}
+	}
+	[class*='bg-'],
+	[class^='bg-'] {
+		padding-top: 3px;
+	}
+	.brand {
+		color: $primary;
+		font-size: $init * 28;
+		@media screen and (min-width: 1270px) {
+			font-size: $init * 32;
+		}
+	}
+	ul {
+		@include list(0, 0, none);
+		font-size: 0;
+		li {
+			display: inline-block;
+			> a,
+			> span {
+				color: $black;
+				@media screen and (max-width: 1023px) {
+					display: table;
+					margin-left: auto;
+					margin-right: auto;
+				}
+				@media screen and (min-width: 1024px) {
+					display: block;
+				}
+			}
+		}
+		&.nav-group {
+			@media screen and (max-width: 1023px) {
+				display: none;
+				position: absolute;
+				top: calc(100% + 18px);
+				left: 0;
+				right: 0;
+				padding: $gutter-width / 2;
+				background-color: $white;
+				z-index: 5;
+				> li {
+					display: block;
+				}
+			}
+			@media screen and (min-width: 1024px) {
+				display: block !important;
+			}
+		}
+		&.navbar-nav {
+			li {
+				@media screen and (max-width: 1023px) {
+					display: block;
+				}
+				@media screen and (min-width: 1024px) {
+					margin-right: 40px;
+				}
+				@media screen and (min-width: 1270px) {
+					margin-right: 60px;
+				}
+				@media screen and (min-width: 1430px) {
+					margin-right: 80px;
+				}
+				a {
+					position: relative;
+					color: $gray-300;
+					@include fs24();
+					@media screen and (max-width: 1023px) {
+						padding-top: 15px;
+						padding-bottom: 15px;
+						&::before {
+							@include beforeafter('', block);
+							position: absolute;
+							bottom: 15px;
+							left: 0;
+							right: 0;
+							height: 2px;
+						}
+					}
+					&:hover {
+						color: $primary;
+					}
+					&.active {
+						color: $primary;
+						@media screen and (max-width: 1023px) {
+							&::before {
+								background-color: $primary;
+							}
+						}
+						@media screen and (min-width: 1270px) {
+							border-bottom: 2px solid $primary;
+						}
+					}
+				}
+			}
+		}
+		&.navbar-lang {
+			li {
+				@media screen and (max-width: 1023px) {
+					display: block;
+					padding-top: 5px;
+					padding-bottom: 5px;
+				}
+				+ li {
+					@media screen and (min-width: 1024px) {
+						margin-left: $init * 4;
+					}
+				}
+				a {
+					font-size: $init * 17;
+					line-height: $init * 36;
+					text-align: center;
+					border-radius: $init * 4;
+					@media screen and (max-width: 1023px) {
+						display: table;
+						min-width: 80%;
+						margin-left: auto;
+						margin-right: auto;
+					}
+					@media screen and (min-width: 1024px) {
+						min-width: $init * 72;
+					}
+					@media screen and (min-width: 1270px) {
+						font-size: $init * 21;
+					}
+					&:hover {
+						background-color: rgba($primary, 0.125);
+					}
+					&.active {
+						color: $white;
+						background-color: $primary;
+					}
+				}
+			}
+		}
+		&.contact-nav {
+			li {
+				line-height: 1;
+				&.fax {
+					border-left: 2px solid #000;
+				}
+				a,
+				span {
+					font-size: $init * 16;
+					vertical-align: middle;
+				}
+				a:hover {
+					color: $primary-variant;
+				}
+			}
+		}
+	}
+}
+
+.hamurger {
+	width: 40px;
+	height: 32px;
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
+	@media screen and (min-width: 1024px) {
+		display: none;
+	}
+	span {
+		&:nth-child(1) {
+			background: $blue-default;
+			content: "";
+			position: absolute;
+			width: 40px;
+			height: 3px;
+			margin-top: 13px;
+			transition: 0.3s ease-in-out;
+			&::before,
+			&::after {
+				background: $blue-default;
+				content: "";
+				position: absolute;
+				width: 40px;
+				height: 3px;
+				margin-top: 13px;
+				transition: 0.3s ease-in-out;
+			}
+			&::before {
+				margin-top: -12px;
+				transition: 0.3s ease-in-out 0.3s;
+			}
+			&::after {
+				margin-top: 12px;
+				transition: 0.3s ease-in-out 0.3s;
+			}
+		}
+		&:nth-child(2) {
+			background: $blue-default;
+			content: "";
+			position: absolute;
+			width: 0px;
+			height: 3px;
+			margin-top: 13px;
+			transform: rotate(-45deg);
+			transition: 0.3s ease-in-out;
+		}
+	}
+	&.active span {
+		&:nth-child(1) {
+			&::before,
+			&::after {
+				margin-top: 0;
+			}
+			transition: 0.5s ease-in-out 0.5s;
+			transform: rotate(45deg);
+		}
+		&:nth-child(2) {
+			width: 40px;
+			transition: 0.3s ease-in-out 0.8s;
+		}
+	}
+}
+
+aside {
+	@media screen and (max-width: 1023px) {
+		margin-top: 40px;
+	}
+	@media screen and (min-width: 1024px) {
+		padding-left: 40px !important;
+		border-left: 1px solid $red-default;
+	}
+}
+
+.navbar-side {
+	ul {
+		@include list(0, 0, none);
+		a {
+			color: $black;
+			&:hover, &.active {
+				color: $red-default !important;
+				border-left-color: $red-default !important;
+			}
+		}
+		&.lv-1 {
+			> li {
+				line-height: 1.25;
+				> a, > span {
+					display: block;
+					padding-top: 15px;
+					padding-bottom: 15px;
+					@include fs28();
+					> * {
+						display: inline-block;
+						vertical-align: middle;
+					}
+				}
+				i.active {
+					transform: rotate(180deg);
+				}
+			}
+		}
+		&.lv-2 {
+			display: none;
+			padding-left: 1em;
+			&.active {
+				display: block;
+			}
+			li {
+				padding-top: 20px;
+				padding-bottom: 20px;
+				a {
+					display: block;
+					padding-left: 10px;
+					border-left: 1px solid $black;
+					@include fs24();
+				}
+			}
+		}
+	}
+}
