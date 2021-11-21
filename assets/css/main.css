@@ -4656,7 +4656,7 @@ nav ul.contact-nav li a:hover {
   width: 40px;
   height: 3px;
   margin-top: 13px;
-  transition: 0.3s ease-in-out;
+  transition: 0.15s ease-in-out;
 }
 .hamurger span:nth-child(1)::before, .hamurger span:nth-child(1)::after {
   background: #19304F;
@@ -4665,15 +4665,15 @@ nav ul.contact-nav li a:hover {
   width: 40px;
   height: 3px;
   margin-top: 13px;
-  transition: 0.3s ease-in-out;
+  transition: 0.15s ease-in-out;
 }
 .hamurger span:nth-child(1)::before {
   margin-top: -12px;
-  transition: 0.3s ease-in-out 0.3s;
+  transition: 0.15s ease-in-out 0.15s;
 }
 .hamurger span:nth-child(1)::after {
   margin-top: 12px;
-  transition: 0.3s ease-in-out 0.3s;
+  transition: 0.15s ease-in-out 0.15s;
 }
 .hamurger span:nth-child(2) {
   background: #19304F;
@@ -4683,10 +4683,10 @@ nav ul.contact-nav li a:hover {
   height: 3px;
   margin-top: 13px;
   transform: rotate(-45deg);
-  transition: 0.3s ease-in-out;
+  transition: 0.15s ease-in-out;
 }
 .hamurger.active span:nth-child(1) {
-  transition: 0.5s ease-in-out 0.5s;
+  transition: 0.15s ease-in-out 0.15s;
   transform: rotate(45deg);
 }
 .hamurger.active span:nth-child(1)::before, .hamurger.active span:nth-child(1)::after {
@@ -4694,7 +4694,7 @@ nav ul.contact-nav li a:hover {
 }
 .hamurger.active span:nth-child(2) {
   width: 40px;
-  transition: 0.3s ease-in-out 0.8s;
+  transition: 0.15s ease-in-out 0.2s;
 }
 
 @media screen and (max-width: 1023px) {
@@ -4754,7 +4754,7 @@ nav ul.contact-nav li a:hover {
 .navbar-side ul.lv-1 > li > a i.icon-arrow, .navbar-side ul.lv-1 > li > span i.icon-arrow {
   margin-left: 0.5em;
   font-size: 0.6em;
-  transition: transform 0.3s;
+  transition: transform 0.15s;
 }
 .navbar-side ul.lv-1 > li > a.active > a, .navbar-side ul.lv-1 > li > a.active > span, .navbar-side ul.lv-1 > li > span.active > a, .navbar-side ul.lv-1 > li > span.active > span {
   color: #B70000;
