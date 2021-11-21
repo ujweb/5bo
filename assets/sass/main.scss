@@ -2,6 +2,12 @@
 @import "_variable";
 @import "_common";
 
+@mixin fs18 {
+    font-size: $init * 14;
+    @media screen and (min-width: 1024px) {
+        font-size: $init * 18;
+    }
+}
 @mixin fs24 {
     font-size: $init * 18;
     @media screen and (min-width: 1024px) {
@@ -80,6 +86,41 @@ main {
         span.bg-red {
             width: 100px;
             height: 5px;
+        }
+    }
+}
+
+.navbar-display {
+    display: none;
+}
+
+ol {
+    &.customized-ol {
+        @include list(0, 0, none);
+        li {
+            display: flex;
+            // align-items: center;
+            line-height: 1.25;
+            + li {
+                margin-top: 20px;
+            }
+            span {
+                &.number {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: $init * 27;
+                    height: $init * 27;
+                    margin-right: 20px;
+                    color: $white;
+                    background-color: $blue-light;
+                    border-radius: 50%;
+                    @include fs18();
+                }
+                &.text {
+                    width: calc(100% - 20px - #{$init*27});
+                }
+            }
         }
     }
 }

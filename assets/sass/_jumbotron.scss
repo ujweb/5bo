@@ -43,6 +43,7 @@
 		}
 	}
 	&.jumbotron--inner {
+		background-image: url('../images/jumbotron-inner.jpg');
 		overflow: hidden;
 		&::before {
 			position: absolute;
@@ -61,7 +62,7 @@
 			right: -50%;
 			height: 100%;
 			z-index: 0;
-			@media screen and (min-width: 1024px) {
+			@media screen and (min-width: 768px) {
 				right: 0;
 			}
 		}
@@ -78,7 +79,11 @@
 			}
 		}
 	}
-	&.jumbotron--about {
-		background-image: url('../images/jumbotron-inner.jpg');
+	&.jumbotron--recruitment {
+		> img {
+			@media screen and (max-width: 767px) {
+				right: -20%;
+			}
+		}
 	}
 }

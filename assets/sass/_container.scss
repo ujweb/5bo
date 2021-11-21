@@ -1,4 +1,5 @@
-[class*='container'] {
+[class*='container'],
+[class^='container'] {
 	position: relative;
 	width: 100%;
 	margin-left: auto;

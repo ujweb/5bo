@@ -240,7 +240,6 @@ aside {
 		margin-top: 40px;
 	}
 	@media screen and (min-width: 1024px) {
-		padding-left: 40px !important;
 		border-left: 1px solid $red-default;
 	}
 }
@@ -248,40 +247,75 @@ aside {
 .navbar-side {
 	ul {
 		@include list(0, 0, none);
-		a {
-			color: $black;
-			&:hover, &.active {
+		line-height: 1.25;
+		> li {
+			> a, > span {
+				color: $primary;
+				&.active {
+					color: $red-default !important;
+					border-left-color: $red-default !important;
+				}
+			}
+			> a:hover {
 				color: $red-default !important;
 				border-left-color: $red-default !important;
+			}
+			> span:hover {
+				color: $blue-light !important;
+				border-left-color: $blue-light !important;
 			}
 		}
 		&.lv-1 {
 			> li {
-				line-height: 1.25;
 				> a, > span {
 					display: block;
-					padding-top: 15px;
-					padding-bottom: 15px;
+					padding-top: 10px;
+					padding-bottom: 10px;
 					@include fs28();
+					cursor: pointer;
+					@media screen and (min-width: 1024px) {
+						padding-top: 15px;
+						padding-bottom: 15px;
+					}
 					> * {
 						display: inline-block;
 						vertical-align: middle;
 					}
-				}
-				i.active {
-					transform: rotate(180deg);
+					i.icon-arrow {
+						margin-left: 0.5em;
+						font-size: 0.6em;
+						transition: transform 0.3s;
+					}
+					&.active {
+						> a, > span {
+							color: $red-default;
+						}
+					}
+					&.active,
+					&.opened {
+						i.icon-arrow {
+							transform: rotate(180deg);
+						}
+					}
 				}
 			}
 		}
 		&.lv-2 {
 			display: none;
-			padding-left: 1em;
+			padding-left: $init * 24;
+			@media screen and (min-width: 1024px) {
+				padding-left: $init * 32;
+			}
 			&.active {
 				display: block;
 			}
 			li {
-				padding-top: 20px;
-				padding-bottom: 20px;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				@media screen and (min-width: 1024px) {
+					padding-top: 20px;
+					padding-bottom: 20px;
+				}
 				a {
 					display: block;
 					padding-left: 10px;
