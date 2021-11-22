@@ -59,9 +59,12 @@
 			display: block;
 			top: 0;
 			bottom: 0;
-			right: -50%;
 			height: 100%;
 			z-index: 0;
+			@media screen and (max-width: 767px) {
+				left: 45%;
+				right: auto;
+			}
 			@media screen and (min-width: 768px) {
 				right: 0;
 			}
@@ -79,17 +82,11 @@
 			}
 		}
 	}
-	&.jumbotron--about {
-		> img {
-			@media screen and (max-width: 767px) {
-				right: -67.5%;
-			}
-		}
-	}
+	&.jumbotron--about,
 	&.jumbotron--recruitment {
 		> img {
 			@media screen and (max-width: 767px) {
-				right: -30%;
+				left: 40%;
 			}
 		}
 	}

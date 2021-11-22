@@ -109,8 +109,25 @@ main {
         }
     }
     h2 {
+        @media screen and (min-width: 768px) {
+            display: none !important;
+        }
+        > * {
+            vertical-align: middle;
+            @include fs28();
+        }
+    }
+    h3 {
         line-height: 1;
         @include fs28();
+        > * {
+            vertical-align: middle;
+        }
+        i.icon-cargoship {
+            @media screen and (min-width: 768px) {
+                display: none !important;
+            }
+        }
         span.bg-red {
             width: 100px;
             height: 5px;
@@ -188,6 +205,9 @@ table {
         &:nth-child(1) {
             @include fs28();
             text-align: center;
+            @media screen and (max-width: 1023px) {
+                min-width: calc(4em + 40px);
+            }
             @media screen and (min-width: 1024px) {
                 width: 280px;
             }
