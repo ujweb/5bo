@@ -4918,9 +4918,46 @@ footer {
   }
 }
 @media screen and (max-width: 767px) {
-  .jumbotron.jumbotron--recruitment > img {
-    right: -20%;
+  .jumbotron.jumbotron--about > img {
+    right: -67.5%;
   }
+}
+@media screen and (max-width: 767px) {
+  .jumbotron.jumbotron--recruitment > img {
+    right: -30%;
+  }
+}
+
+a.gotop {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #19304F;
+  border-radius: 50%;
+  z-index: 2;
+}
+@media screen and (max-width: 767px) {
+  a.gotop {
+    bottom: 20px;
+    right: 20px;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  a.gotop {
+    bottom: 50px;
+    right: 50px;
+    width: 4.375rem;
+    height: 4.375rem;
+  }
+}
+a.gotop i.icon {
+  display: block;
+  transform: rotate(180deg);
 }
 
 .fs-24 {
@@ -4991,8 +5028,15 @@ main h2 span.bg-red {
   height: 5px;
 }
 
-.navbar-display {
-  display: none;
+@media screen and (max-width: 767px) {
+  .navbar-display {
+    display: block !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  .navbar-display {
+    display: none;
+  }
 }
 
 ol.customized-ol {

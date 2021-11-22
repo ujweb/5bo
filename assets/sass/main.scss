@@ -42,6 +42,34 @@
 @import "_breadcrumb";
 @import "_jumbotron";
 
+a.gotop {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    background-color: $primary;
+    border-radius: 50%;
+    z-index: 2;
+    @media screen and (max-width: 767px) {
+        bottom: 20px;
+        right: 20px;
+        width: $init * 40;
+        height: $init * 40;
+    }
+    @media screen and (min-width: 768px) {
+        bottom: 50px;
+        right: 50px;
+        width: $init * 70;
+        height: $init * 70;
+    }
+    i.icon {
+        display: block;
+        transform: rotate(180deg);
+    }
+}
+
 .fs-24 {
     @include fs24();
 }
@@ -91,7 +119,12 @@ main {
 }
 
 .navbar-display {
-    display: none;
+    @media screen and (max-width: 767px) {
+        display: block !important;
+    }
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
 }
 
 ol {

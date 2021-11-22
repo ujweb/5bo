@@ -1,7 +1,9 @@
+$('a.gotop').hide();
+
 $(function () {
 	var width = $(window).width(),
 		height = $(window).height(),
-		headerHeight = $('header').outerHeight();
+		navHeight = $('nav').outerHeight();
 
 	$('a.smooth-scroll[href*="#"]:not([href="#"])').on("click", function() {
 		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -9,15 +11,22 @@ $(function () {
 			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 			if (target.length) {
 				$('html, body').animate({
-					scrollTop: (target.offset().top - headerHeight + 1)
-				}, 1000);
+					scrollTop: (target.offset().top - navHeight + 1)
+				}, 700);
 				return false;
 			}
 		}
 	});
 
 	$(window).on('resize', function () {});
-	$(window).on('scroll', function () {});
+	$(window).on('scroll', function () {
+		let scroll = $(window).scrollTop();
+		if ( scroll > navHeight ) {
+			$('a.gotop').fadeIn();
+		} else {
+			$('a.gotop').fadeOut();
+		}
+	});
 });
 
 $('.hamurger').click(function(){

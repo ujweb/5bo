@@ -79,10 +79,17 @@
 			}
 		}
 	}
+	&.jumbotron--about {
+		> img {
+			@media screen and (max-width: 767px) {
+				right: -67.5%;
+			}
+		}
+	}
 	&.jumbotron--recruitment {
 		> img {
 			@media screen and (max-width: 767px) {
-				right: -20%;
+				right: -30%;
 			}
 		}
 	}
