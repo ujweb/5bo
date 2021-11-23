@@ -5117,8 +5117,8 @@ table tr + tr {
 table th {
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
   font-size: 1.375rem;
 }
 @media screen and (min-width: 1024px) {
@@ -5135,8 +5135,8 @@ table th {
 table td {
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
   font-size: 1.125rem;
 }
 @media screen and (min-width: 1024px) {

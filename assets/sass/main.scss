@@ -184,8 +184,8 @@ table {
     th {
         padding-top: 20px;
         padding-bottom: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
         @include fs28();
         @media screen and (min-width: 1024px) {
             padding-left: 30px;
@@ -195,8 +195,8 @@ table {
     td {
         padding-top: 10px;
         padding-bottom: 10px;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
         @include fs24();
         @media screen and (min-width: 1024px) {
             padding-left: 30px;
