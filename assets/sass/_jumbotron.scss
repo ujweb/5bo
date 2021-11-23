@@ -11,9 +11,15 @@
 	}
 	&.jumbotron--index {
 		&::before {
-			@media screen and (min-width: 768px) {
-				padding-top: 30.848329048843188%;
+			@media screen and (min-width: 1367px) {
+				padding-top: 45.677083333333333%;
 				background-image: url('../images/jumbotron.jpg');
+			}
+			@media screen and (orientation: landscape) {
+				@media screen and (max-width: 1366px) {
+					padding-top: 59.322916666666667%;
+					background-image: url('../images/jumbotron-landscape.jpg');
+				}
 			}
 			@media screen and (orientation: portrait) {
 				padding-top: 160.514018691588785%;

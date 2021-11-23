@@ -4838,12 +4838,19 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1367px) {
   .jumbotron.jumbotron--index::before {
-    padding-top: 30.848329048843188%;
+    padding-top: 45.677083333333333%;
     background-image: url("../images/jumbotron.jpg");
   }
 }
+@media screen and (orientation: landscape) and (max-width: 1366px) {
+  .jumbotron.jumbotron--index::before {
+    padding-top: 59.322916666666667%;
+    background-image: url("../images/jumbotron-landscape.jpg");
+  }
+}
+
 @media screen and (orientation: portrait) {
   .jumbotron.jumbotron--index::before {
     padding-top: 160.514018691588785%;
