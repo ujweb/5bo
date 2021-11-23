@@ -4834,21 +4834,38 @@ footer {
 .jumbotron::before {
   content: "";
   display: block;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.jumbotron.jumbotron--index {
-  background-image: url("../images/jumbotron.jpg");
-}
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .jumbotron.jumbotron--index::before {
     padding-top: 30.848329048843188%;
+    background-image: url("../images/jumbotron.jpg");
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (orientation: portrait) {
+  .jumbotron.jumbotron--index::before {
+    padding-top: 160.514018691588785%;
+    background-image: url("../images/jumbotron-mobile.jpg");
+  }
+}
+@media screen and (orientation: portrait) and (min-width: 768px) {
+  .jumbotron.jumbotron--index::before {
+    padding-top: 126.635514018691589%;
+    background-image: url("../images/jumbotron-pad.jpg");
+  }
+}
+
+.jumbotron.jumbotron--index .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (orientation: portrait) {
   .jumbotron.jumbotron--index .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 25%;
   }
 }
 .jumbotron.jumbotron--index .container h1 span.eng {
